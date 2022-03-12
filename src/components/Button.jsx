@@ -9,4 +9,8 @@ const Button = ({ label, className }) => {
   )
 }
 
+Button.defaultProps = {
+  className: '',
+}
+
 export default Button
