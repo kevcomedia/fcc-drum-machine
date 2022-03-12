@@ -1,4 +1,5 @@
 import Button from './components/Button'
+import Display from './components/Display'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Button className="row-start-3" label="Z" />
       <Button className="row-start-3" label="X" />
       <Button className="row-start-3" label="C" />
+      <Display className="col-start-5 row-start-2 col-span-2" label="display" />
     </div>
   )
 }
