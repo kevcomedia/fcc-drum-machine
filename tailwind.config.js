@@ -5,6 +5,9 @@ module.exports = {
       boxShadow: {
         button: '0 0.5rem var(--tw-shadow-color)',
       },
+      spacing: {
+        '128': '32rem',
+      },
     },
   },
   plugins: [],
