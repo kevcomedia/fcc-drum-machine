@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import useStatefulClassNames from '../hooks/useStatefulClassNames'
 
 const Button = ({ label, audioSrc, displayText, className, onPlay }) => {
