@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Button from './components/Button'
 import Display from './components/Display'
+import drumMachineData from './drumMachineData'
 
 const App = () => {
   const [displayText, setDisplayText] = useState('')
