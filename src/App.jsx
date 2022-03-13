@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import Button from './components/Button'
 import Display from './components/Display'
 
 const App = () => {
+  const [displayText, setDisplayText] = useState('')
+
   return (
     <div
       className="w-128 border-8 border-cyan-700 rounded-lg p-8 bg-cyan-500 grid grid-cols-6 grid-rows-3 gap-4"
@@ -49,7 +52,10 @@ const App = () => {
         label="C"
         audioSrc="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
       />
-      <Display className="col-start-5 row-start-2 col-span-2" label="display" />
+      <Display
+        className="col-start-5 row-start-2 col-span-2"
+        label={displayText}
+      />
     </div>
   )
 }
