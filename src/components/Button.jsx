@@ -3,10 +3,6 @@ import useStatefulClassNames from '../hooks/useStatefulClassNames'
 
 const Button = ({ label, audioSrc, displayText, className, onPlay }) => {
   const audioRef = useRef(null)
-  const activeClasses = useStatefulClassNames(label, {
-    default: 'bg-green-500 hover:bg-green-400 border-green-900 shadow-button',
-    active: 'bg-yellow-500 border-yellow-900 translate-y-2 shadow-none',
-  })
 
   const playAudio = () => {
     if (audioRef.current) {
@@ -26,6 +22,11 @@ const Button = ({ label, audioSrc, displayText, className, onPlay }) => {
     return () => {
       window.removeEventListener('keydown', handler)
     }
+  })
+
+  const activeClasses = useStatefulClassNames(label, {
+    default: 'bg-green-500 hover:bg-green-400 border-green-900 shadow-button',
+    active: 'bg-yellow-500 border-yellow-900 translate-y-2 shadow-none',
   })
 
   return (
