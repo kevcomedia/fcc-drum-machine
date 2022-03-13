@@ -4,6 +4,7 @@ const Button = ({ label, audioSrc, className }) => {
   const audioRef = useRef(null)
 
   const handleClick = () => {
+    audioRef.current.currentTime = 0
     audioRef.current.play()
   }
 
