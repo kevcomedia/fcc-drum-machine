@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import useStatefulClassNames from '../hooks/useStatefulClassNames'
 
-const Button = ({ label, audioSrc, className }) => {
+const Button = ({ label, audioSrc, displayText, className, onPlay }) => {
   const audioRef = useRef(null)
   const activeClasses = useStatefulClassNames(label, {
     default: 'bg-green-500 hover:bg-green-400 border-green-900 shadow-button',
@@ -12,6 +12,7 @@ const Button = ({ label, audioSrc, className }) => {
     if (audioRef.current) {
       audioRef.current.currentTime = 0
       audioRef.current.play()
+      onPlay(displayText)
     }
   }
 

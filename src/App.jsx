@@ -20,6 +20,7 @@ const App = () => {
             audioSrc={src}
             displayText={displayText}
             className={rowStart[Math.floor(index / 3)]}
+            onPlay={setDisplayText}
             key={buttonLabel}
           />
         )
