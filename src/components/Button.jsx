@@ -1,18 +1,32 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const Button = ({ label, audioSrc, className }) => {
   const audioRef = useRef(null)
 
-  const handleClick = () => {
-    audioRef.current.currentTime = 0
-    audioRef.current.play()
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0
+      audioRef.current.play()
+    }
   }
+
+  useEffect(() => {
+    const handler = (event) => {
+      if (event.keyCode == label.charCodeAt()) {
+        playAudio()
+      }
+    }
+    window.addEventListener('keydown', handler)
+    return () => {
+      window.removeEventListener('keydown', handler)
+    }
+  })
 
   return (
     <button
       className={`${className} drum-pad bg-green-500 hover:bg-green-400 text-lg font-bold p-2 aspect-square border border-green-900 rounded shadow-button shadow-green-900 active:bg-yellow-500 active:border-yellow-900 active:translate-y-2 active:shadow-none`}
       type="button"
-      onClick={handleClick}
+      onClick={playAudio}
       id={`button-${label}`}
     >
       {label}
